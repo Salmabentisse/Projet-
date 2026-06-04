@@ -1,49 +1,48 @@
 # Projet MNIST - Classification des Chiffres Manuscrits
 
-**Auteurs:** Salma Bentisse   
+**Auteur:** Salma Bentisse  
 **Date:** Juin 2026
 
-## Objectif
-Ce projet utilise TensorFlow et Keras pour charger et traiter le dataset MNIST, permettant la classification des chiffres manuscrits.
+## Description
 
-## Structure du Projet
+Ce projet porte sur la classification des chiffres manuscrits avec le dataset MNIST. J'ai comparé plusieurs approches : des modèles classiques (Ridge, Lasso, ElasticNet) et des réseaux de neurones (MLP, Transfer Learning avec MobileNetV2).
+
+## Structure
+
 ```
 tp2/
-├── Untitled.ipynb          # Notebook principal
-├── data_loader.py          # Module de chargement des données
-├── preprocessing.py        # Module de prétraitement
-├── README.md              # Ce fichier
-└── .gitignore             # Fichiers à ignorer dans Git
+├── Untitled.ipynb       # Notebook principal
+├── data_loader.py       # Chargement des données MNIST
+├── preprocessing.py     # Normalisation et vérification des données
+├── README.md
+└── .gitignore
 ```
 
 ## Installation
 
-1. Créer un environnement virtuel:
 ```bash
 python -m venv .venv
-.venv\Scripts\activate  # Windows
-```
-
-2. Installer les dépendances:
-```bash
-pip install tensorflow numpy matplotlib seaborn
+.venv\Scripts\activate
+pip install tensorflow scikit-learn numpy matplotlib seaborn pandas
 ```
 
 ## Utilisation
 
-Exécuter le notebook:
 ```bash
 jupyter notebook Untitled.ipynb
 ```
 
 ## Données
-Le dataset MNIST est téléchargé automatiquement par TensorFlow. Il ne sera **pas versionné** dans le dépôt Git.
 
-## Critères de Validation
+Le dataset MNIST est téléchargé automatiquement via TensorFlow (`mnist.load_data()`). Il n'est pas inclus dans le dépôt.
 
-| Critère | Statut |
-|---------|--------|
-| Présence du fichier README.md | ✅ |
-| Noms et Prénoms dans le README | ✅ |
-| Dataset non versionné | ✅ |
-| Code modulaire (.py importés) | ✅ |
+## Résultats
+
+| Modèle | Accuracy |
+|--------|----------|
+| Ridge | 85.2% |
+| Lasso | 91.5% |
+| ElasticNet | 91.4% |
+| MLP simple | 91.8% |
+| MLP optimisé | 96.8% |
+| MLP avancé | 97.5% |
